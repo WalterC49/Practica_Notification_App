@@ -9,7 +9,6 @@ export function NavBar({ socket }) {
   const [notifications, setNotifications] = useState([]);
   const [open, setOpen] = useState(false);
 
-  // NO SÉ PORQUE ESTO SE DISPARA 2 VECES SIEMPRE, CUANDO NO DEBERÍA
   useEffect(() => {
     socket.on("server:getNotification", (data) => {
       setNotifications((prev) => [...prev, data]);
